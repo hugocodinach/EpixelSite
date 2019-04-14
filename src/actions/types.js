@@ -1,0 +1,27 @@
+const TYPES = {
+    CONNECT: 'connect',
+    CONNECT_SUCCESS: 'connect_success',
+    CONNECT_FAILURE: 'connect_failure',
+    CREATE_GAMES: 'create_games',
+    CREATE_GAMES_FAILURE: 'create_games_failure',
+    CREATE_GAMES_SUCCESS: 'create_games_success',
+    CREATE_LAN: 'create_lan',
+    CREATE_LAN_FAILURE: 'create_lan_failure',
+    CREATE_LAN_SUCCESS: 'create_lan_success',
+    DELETE_GAMES: 'update_games',
+    DELETE_GAMES_SUCCESS: 'update_games_success',
+    DELETE_GAMES_FAILURE: 'update_games_failure',
+    DISABLE_ERROR: 'disable_error',
+    GET_GAMES: 'get_games',
+    GET_GAMES_SUCCESS: 'get_games_success',
+    GET_LAN: 'get_lan',
+    GET_LAN_SUCCESS: 'get_lan_success',
+    GET_PHOTOS: 'get_photos',
+    GET_PHOTOS_SUCCESS: 'get_photos_success',
+    TRIGGER_LOGIN_LOADING: 'trigger_login_loading',
+    UPDATE_GAMES: 'update_games',
+    UPDATE_GAMES_SUCCESS: 'update_games_success',
+    UPDATE_GAMES_FAILURE: 'update_games_failure',
+};
+
+export default TYPES;
