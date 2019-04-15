@@ -3,9 +3,11 @@ import { withStyles } from '@material-ui/core/styles';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Wallpaper from '../../img/loginWallpaper.jpg';
 import { Typography, TextField, Button, CircularProgress, Snackbar, Icon, IconButton } from '@material-ui/core';
 import { connectUser, disableError, triggerLoginLoading } from '../../actions';
+
+import Wallpaper from '../../img/loginWallpaper.jpg';
+import Logo from '../../img/EpixelLogo.png';
 
 class LoginComponent extends React.Component {
 
@@ -110,6 +112,9 @@ class LoginComponent extends React.Component {
                         ]}
                     />
                     </div>
+                    <div className={classes.logoContainer}>
+                        <img alt='logo' className={classes.logo} src={Logo}/>
+                    </div>
                 </div>
             </div>
         );
@@ -180,7 +185,18 @@ const styles = theme => ({
     },
     snackbar: {
         backgroundColor: theme.palette.error.main,
-    }
+    },
+    logoContainer: {
+        display: 'flex',
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        marginTop: 50,
+    },
+    logo: {
+        display: 'flex',
+        width: 200,
+    },
 });
 
 const mapStateToProps = (state) => {

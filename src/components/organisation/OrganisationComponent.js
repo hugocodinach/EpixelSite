@@ -106,13 +106,13 @@ const styles = theme => ({
     tabContent: {
         display: 'flex',
         width: '100%',
-        minHeight: 750,
+        minHeight: 700,
     },
     tabLanCentered: {
         display: 'flex',
         width: '100%',
         height: '100%',
-        minHeight: 750,
+        minHeight: 700,
         justifyContent: 'center',
         alignItems: 'center',
     }

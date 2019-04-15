@@ -5,6 +5,8 @@ import {
     TextField, Select, FormControl, InputLabel, OutlinedInput, Icon, Fab, Button
 } from '@material-ui/core'
 
+import GamesDialogComponent from './GamesDialogComponent';
+
 class OrgLanComponent extends React.Component {
 
     state = {
@@ -12,6 +14,7 @@ class OrgLanComponent extends React.Component {
         date: '',
         games: [],
         currentGame: '',
+        gameDialogOpen: false,
     }
 
     componentDidMount() {
@@ -22,6 +25,14 @@ class OrgLanComponent extends React.Component {
             date: lan.date.toString().slice(0, 10),
             games: lan.games
         });
+    }
+
+    handleGameDialog = () => {
+        const { gameDialogOpen } = this.state;
+
+        this.setState({
+            gameDialogOpen: !gameDialogOpen,
+        })
     }
 
     handleName = event => {
@@ -54,7 +65,7 @@ class OrgLanComponent extends React.Component {
 
     renderLanPart() {
         const { classes } = this.props;
-        const { name, date, games, currentGame } = this.state;
+        const { name, date, games, currentGame, gameDialogOpen } = this.state;
 
         return (
             <div className={classes.lanPartContainer}>
@@ -103,10 +114,12 @@ class OrgLanComponent extends React.Component {
                     </FormControl>
                     <Fab
                         color='secondary'
-                        size='small'>
+                        size='small'
+                        onClick={this.handleGameDialog}>
                         <Icon>add</Icon>
                     </Fab>
                 </div>
+                <GamesDialogComponent open={gameDialogOpen} close={this.handleGameDialog}/>
             </div>
         );
     }
