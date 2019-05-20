@@ -4,6 +4,31 @@ import PhotosService from '../services/photosService';
 import LanService from '../services/lanService';
 import GamesService from '../services/gamesService';
 
+const updateLanSuccess = (dispatch, data) => {
+    dispatch({
+        type: TYPES.UPDATE_LAN_SUCCESS,
+        payload: data
+    });
+}
+
+const updateLanFailure = (dispatch) => {
+    dispatch({
+        type: TYPES.UPDATE_LAN_FAILURE,
+    });
+}
+
+export const updateLan = (lan, callback) => {
+    return (dispatch) => {
+        dispatch({ type: TYPES.UPDATE_LAN });
+        LanService.updateLan(lan)
+        .then(data => {
+            updateLanSuccess(dispatch, data);
+            callback();
+        })
+        .catch(() => updateLanFailure(dispatch));
+    };
+}
+
 const deleteGamesSuccess = (dispatch, data) => {
     dispatch({
         type: TYPES.DELETE_GAMES_SUCCESS,

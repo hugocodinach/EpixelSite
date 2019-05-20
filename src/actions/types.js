@@ -22,6 +22,9 @@ const TYPES = {
     UPDATE_GAMES: 'update_games',
     UPDATE_GAMES_SUCCESS: 'update_games_success',
     UPDATE_GAMES_FAILURE: 'update_games_failure',
+    UPDATE_LAN: 'update_lan',
+    UPDATE_LAN_SUCCESS: 'update_lan_success',
+    UPDATE_LAN_FAILURE: 'update_lan_failure'
 };
 
 export default TYPES;

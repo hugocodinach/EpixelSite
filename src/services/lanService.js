@@ -25,6 +25,24 @@ class LanService extends AbstractService {
             throw responseData;
         });
     }
+
+    updateLan(lan) {
+        return this.request({
+            method: 'PUT',
+            url: root.REACT_APP_API_ROOT + 'lan',
+            json: {
+                name: lan.name,
+                date: lan.date,
+                games: lan.games,
+                ObjectId: lan._id,
+            }
+        }).then(responseData => {
+            if (responseData.ok) {
+                return responseData.json();
+            }
+            throw responseData;
+        });
+    }
 }
 
 export default new LanService();
